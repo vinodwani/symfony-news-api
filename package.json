@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "@symfony/stimulus-bridge": "2.0.0",
+    "@symfony/webpack-encore": "^1.1.2",
+    "stimulus": "^2.0.0",
+    "webpack-notifier": "1.6.0"
+  }
+}

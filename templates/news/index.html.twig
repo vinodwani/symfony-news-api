@@ -1,0 +1,38 @@
+{# templates/news/index.html.twig #} 
+{% extends 'base.html.twig' %} 
+{% block stylesheets %}
+    {{ encore_entry_link_tags('list') }}
+{% endblock %}
+{% block body %}
+<div class="container">
+  <div>
+    <div class="card-header"><h1>Top Business Headlines</h1></div>
+    {% if articles|length > 0 %}
+      <table id="articles">
+        <thead>
+          <th>ID</th>
+          <th>Author</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Picture</th>
+          <th>PublishedAt</th>
+          <th>Content</th>
+        </thead>
+        <tbody>
+          {% for data in articles %}
+              <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ data.author }}</td>
+                <td>{{ data.title }}</td>
+                <td>{{ data.description }}</td>
+                <td><img src = "{{ data.urlToImage }}" height="130" width="130"></td>
+                <td>{{ data.publishedAt }}</td>
+                <td>{{ data.content }}</td>
+              </tr>                  
+          {% endfor %}              
+        </tbody>
+      </table>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
